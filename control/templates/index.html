@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISDB</title>
+</head>
+<body>
+{% for tv_show in tv_shows %}
+<p>
+    {{ tv_show.id_tv_show}} - <a href="tv_show_data?id_tv_show={{ tv_show.id_tv_show }}">{{ tv_show.name }}</a>
+    <a href="delete_tv_show?id_tv_show={{ tv_show.id_tv_show }}">deletar</a>
+</p>
+{% endfor %}
+
+<a href="form_register_tv_show_data">Incluir TV Show</a>
+</body>
+</html>

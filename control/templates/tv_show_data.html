@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV Show</title>
+    <style>
+        h3 {text-align: center; width: 25%}
+    </style>
+</head>
+<body>
+<p>{{ tv_show.name }}:</p>
+<p><img src="{{tv_show.poster}}" width="220" height="342"></p>
+<p>
+<h3>DIRECTORS:</h3>
+{{ directors[0].id_director }} -
+{{ directors[0].name }} -
+{{ directors[0].date_of_birth }} -
+{{ directors[0].place_of_birth }}
+</p>
+<p>
+<h3>CAST:</h3>
+<a href="cast_member_data?id_cast={{ cast_members[0].id_cast }} ">
+    {{ cast_members[0].id_cast }} -
+    {{ cast_members[0].name }} -
+    {{ cast_members[0].date_of_birth }} -
+    {{ cast_members[0].place_of_birth }}
+</a>
+</p>
+<p>
+<h3>EPISODES:</h3>
+{{ episodes[0].id_episode }} -
+{{ episodes[0].name }} -
+{{ episodes[0].season }} -
+{{ episodes[0].year }}
+</p>
+</body>
+</html>
