@@ -40,7 +40,7 @@ def delete_tv_show():
 
 @app.route("/tv_show_data")
 def tv_show_data_detail():
-  id_tv_show = int(request.args.get("id_tv_show"))
+  id_tv_show = request.args.get("id_tv_show")
 
   tv_show = tv_show_dao.get_tv_show(app, id_tv_show)
 
