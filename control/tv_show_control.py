@@ -13,20 +13,16 @@ def tv_shows():
   return render_template("index.html", tv_shows=tv_shows_data)
 
 
-@app.route("/form_register_tv_show_data")
-def register_tv_show_data():
-  return render_template("form_register_tv_show_data.html")
-
-
 @app.route("/register_tv_show")
 def register_tv_show():
   tv_show_name = request.args.get("tv_show_name")
   tv_show_genre = request.args.get("tv_show_genre")
   tv_show_poster = request.args.get("tv_show_poster")
+  tv_show_description = request.args.get("tv_show_description")
 
-  tv_show_dao.register_tv_show(app, tv_show_name, tv_show_genre, tv_show_poster)
+  tv_show_dao.register_tv_show(app, tv_show_name, tv_show_genre, tv_show_poster, tv_show_description)
 
-  return render_template("tv_show_registered.html", tv_show_name=tv_show_name)
+  return render_template("registered.html", type='seriado', name=tv_show_name)
 
 
 @app.route("/delete_tv_show")
@@ -35,7 +31,7 @@ def delete_tv_show():
 
   tv_show_dao.delete_tv_show(app, id_tv_show)
 
-  return render_template("deleted.html", name="seriado")
+  return render_template("deleted.html", type="seriado")
 
 
 @app.route("/tv_show_data")

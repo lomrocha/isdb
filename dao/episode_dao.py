@@ -46,6 +46,25 @@ def get_episodes(file, ids_episode):
   return episodes
 
 
+def register_episode(file, episode_name, episode_season, episode_year):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"INSERT INTO isdb.episode (name, season, year) " \
+          f"VALUES ('{episode_name}', '{episode_season}', '{episode_year}')"
+
+  cursor.execute(query)
+  connection.commit()
+
+
+def delete_episode(file, id_episode):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"DELETE FROM isdb.episode WHERE id_episode = {id_episode}"
+
+  cursor.execute(query)
+  connection.commit()
+
+
 def get_tv_show_directors_ids(file, id_episode):
   connection, cursor = connection_dao.get_connection(file)
 

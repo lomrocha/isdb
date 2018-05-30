@@ -7,7 +7,7 @@ from model \
 def get_tv_show(file, id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT name, genre, poster FROM isdb.tvshows WHERE id_tv_show = {id_tv_show}"
+  query = f"SELECT name, genre, poster, description FROM isdb.tvshows WHERE id_tv_show = {id_tv_show}"
   cursor.execute(query)
 
   data = cursor.fetchone()
@@ -15,7 +15,8 @@ def get_tv_show(file, id_tv_show):
   tv_show = tv_show_model.TvShow(id_tv_show,
                                  data[0],
                                  data[1],
-                                 data[2])
+                                 data[2],
+                                 data[3])
 
   connection.close()
 
@@ -25,7 +26,7 @@ def get_tv_show(file, id_tv_show):
 def get_tv_shows(file):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT id_tv_show, name, genre, poster FROM isdb.tvshows"
+  query = f"SELECT id_tv_show, name, genre, poster, description FROM isdb.tvshows"
   cursor.execute(query)
 
   data = cursor.fetchall()
@@ -35,7 +36,8 @@ def get_tv_shows(file):
     _tv_show = tv_show_model.TvShow(tv_show[0],
                                     tv_show[1],
                                     tv_show[2],
-                                    tv_show[3])
+                                    tv_show[3],
+                                    tv_show[4])
 
     tv_shows.append(_tv_show)
 
@@ -44,11 +46,11 @@ def get_tv_shows(file):
   return tv_shows
 
 
-def register_tv_show(file, tv_show_name, tv_show_genre, tv_show_poster):
+def register_tv_show(file, tv_show_name, tv_show_genre, tv_show_poster, tv_show_description):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"INSERT INTO isdb.tvshows (name, genre, poster) " \
-          f"VALUES ('{tv_show_name}', '{tv_show_genre}', '{tv_show_poster}')"
+  query = f"INSERT INTO isdb.tvshows (name, genre, poster, description) " \
+          f"VALUES ('{tv_show_name}', '{tv_show_genre}', '{tv_show_poster}', '{tv_show_description}')"
 
   cursor.execute(query)
   connection.commit()
@@ -66,7 +68,7 @@ def delete_tv_show(file, id_tv_show):
 def get_tv_shows_by_genre(file, tv_show_genre):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT id_tv_show, name, poster FROM isdb.tvshows WHERE genre = '{tv_show_genre}'"
+  query = f"SELECT id_tv_show, name, poster, description FROM isdb.tvshows WHERE genre = '{tv_show_genre}'"
   cursor.execute(query)
 
   data = cursor.fetchall()
@@ -76,7 +78,8 @@ def get_tv_shows_by_genre(file, tv_show_genre):
     _tv_show = tv_show_model.TvShow(tv_show[0],
                                     tv_show[1],
                                     tv_show_genre,
-                                    tv_show[2])
+                                    tv_show[2],
+                                    tv_show[3])
 
     tv_shows.append(_tv_show)
 

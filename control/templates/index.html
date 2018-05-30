@@ -4,7 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>ISDB</title>
+
+    <style>
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 12px 12px;
+      transition: 0.3s;
+    }
+
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    .tabcontent {
+      animation: fadeEffect 1000ms;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to   {opacity: 1;}
+    }
+
+    .b button:hover {
+      background-color: #ddd;
+    }
+
+    #descriptionbox
+    {
+       width: 250px;
+       max-width: 250px;
+       height: 120px;
+       max-height: 120px;
+       display: inline-block;
+    }
+    </style>
 </head>
 <body>
 <!-- Navbar (sit on top) -->
@@ -13,20 +71,27 @@
         <a href="#home" class="w3-bar-item w3-button"><b>ISDB</b></a>
         <div class="w3-right">
             <a href="#tv_shows" class="w3-bar-item w3-button">TV Shows</a>
+            <a href="#cadastro" class="w3-bar-item w3-button">Cadastro</a>
         </div>
     </div>
 </div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1000px;" id="home">
-  <img class="w3-image" src="https://i.imgur.com/rjwjpVR.jpg" alt="Architecture" width="1000" height="533">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"></span> <span class="w3-hide-small w3-text-light-grey">ISDB</span></h1>
-  </div>
+    <img class="w3-image" src="https://i.imgur.com/rjwjpVR.jpg" alt="Architecture" width="1000" height="533">
+    <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"></span> <span
+                class="w3-hide-small w3-text-light-grey">ISDB</span></h1>
+    </div>
 </header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
+
+    <!-- Search Section -->
+    <div>
+        <form action
+    </div>
     <!-- TV Shows Section -->
     <div class="w3-container w3-padding-32" id="tv_shows">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">TV Shows</h3>
@@ -36,14 +101,99 @@
         {% for tv_show in tv_shows %}
         <div class="w3-col l3 m6 w3-margin-bottom">
             <div class="w3-display-container">
-                <div class="w3-display-topleft w3-black w3-padding"><a href="tv_show_data?id_tv_show={{ tv_show.id_tv_show }}">{{ tv_show.name }}</a></div>
-                <img src="{{tv_show.poster}}" width="220" height="342">
+                <img src="{{tv_show.poster}}" width="250" height="389">
+                <h3>{{ tv_show.name }}</h3>
+                <p class="w3-opacity">{{ tv_show.genre }}</p>
+                <div id="descriptionbox">
+                    <p style="width: 250px; w3-grayscale" > {{ tv_show.description }}</p>
+                </div>
+                <p><button class="w3-button w3-light-grey w3-block" style="width: 250px">
+                    <a href="delete_tv_show?id_tv_show={{ tv_show.id_tv_show }}">Deletar</a>
+                </button></p>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
 
-<a href="form_register_tv_show_data">Incluir TV Show</a>
+    <!-- Cadastro Section -->
+    <div class="w3-container w3-padding-32" id="cadastro">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Cadastro</h3>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'tv_show')" id="defaultOpen">TV Show</button>
+            <button class="tablinks" onclick="openTab(event, 'director')">Diretor</button>
+            <button class="tablinks" onclick="openTab(event, 'cast')">Elenco</button>
+            <button class="tablinks" onclick="openTab(event, 'episode')">Episódio</button>
+        </div>
+
+        <!-- aba tv_show -->
+        <div class="tabcontent" id="tv_show">
+            <form action="register_tv_show">
+                <input class="w3-input w3-border" type="text" placeholder="Nome" name="tv_show_name">
+                <input class="w3-input w3-section w3-border" placeholder="Gênero" type="text" name="tv_show_genre">
+                <input class="w3-input w3-section w3-border" placeholder="Poster" type="text" name="tv_show_poster">
+                <input class="w3-input w3-section w3-border" placeholder="Description" type="text" name="tv_show_description">
+                <button class="w3-input w3-section w3-hover-black" type="submit">
+                    <i>CADASTRAR</i>
+                </button>
+            </form>
+        </div>
+        <!-- aba director -->
+        <div class="tabcontent" id="director">
+            <form action="register_director">
+                <input class="w3-input w3-border" type="text" placeholder="Nome" name="director_name">
+                <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="date" name="director_date_of_birth">
+                <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="director_place_of_birth">
+                <button class="w3-input w3-section w3-hover-black" type="submit">
+                    <i>CADASTRAR</i>
+                </button>
+            </form>
+        </div>
+        <!-- aba cast -->
+        <div class="tabcontent" id="cast">
+            <form action="register_cast_member">
+                <input class="w3-input w3-border" type="text" placeholder="Nome" name="cast_member_name">
+                <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="date" name="cast_member_date_of_birth">
+                <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="cast_member_place_of_birth">
+                <button class="w3-input w3-section w3-hover-black" type="submit">
+                    <i>CADASTRAR</i>
+                </button>
+            </form>
+        </div>
+        <!-- aba episode -->
+        <div class="tabcontent" id="episode">
+            <form action="register_episode">
+                <input class="w3-input w3-border" type="text" placeholder="Nome" name="episode_name">
+                <input class="w3-input w3-section w3-border" placeholder="Temporada" type="text" name="episode_season">
+                <input class="w3-input w3-section w3-border" placeholder="Ano" type="text" name="episode_year">
+                <button class="w3-input w3-section w3-hover-black" type="submit">
+                    <i>CADASTRAR</i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById("defaultOpen").click();
+
+    function openTab(event, tabName) {
+        let i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabcontent.length; ++i) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (let i = 0; i < tablinks.length; ++i) {
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+</script>
 </body>
 </html>
