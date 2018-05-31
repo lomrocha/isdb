@@ -117,7 +117,7 @@ def get_tv_show_cast_members_ids(file, id_tv_show):
 def get_tv_show_episodes_ids(file, id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT DISTINCT (id_episode) FROM isdb.cast_tvshows WHERE id_tv_show = {id_tv_show}"
+  query = f"SELECT id_episode FROM isdb.episodes WHERE id_tv_show = {id_tv_show}"
   cursor.execute(query)
 
   tv_show_data = cursor.fetchall()

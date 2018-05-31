@@ -7,7 +7,8 @@ from model \
 def get_episode(file, id_episode):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT name, season, year FROM isdb.episodes WHERE id_episode = '{id_episode}'"
+  query = f"SELECT name, season, original_air_date " \
+          f"FROM isdb.episodes WHERE id_episode = '{id_episode}'"
   cursor.execute(query)
 
   data = cursor.fetchone()
@@ -29,7 +30,8 @@ def get_episodes(file, ids_episode):
 
   episodes = []
   for id_e in id_list:
-    query = f"SELECT name, season, year FROM isdb.episodes WHERE id_episode = '{id_e}'"
+    query = f"SELECT id_tv_show, name, season, original_air_date " \
+            f"FROM isdb.episodes WHERE id_episode = '{id_e}'"
     cursor.execute(query)
 
     data = cursor.fetchone()
@@ -37,7 +39,8 @@ def get_episodes(file, ids_episode):
     episode = episode_model.Episode(id_e,
                                     data[0],
                                     data[1],
-                                    data[2])
+                                    data[2],
+                                    data[3])
 
     episodes.append(episode)
 
@@ -46,11 +49,26 @@ def get_episodes(file, ids_episode):
   return episodes
 
 
-def register_episode(file, episode_name, episode_season, episode_year):
+def get_seasons(file, id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"INSERT INTO isdb.episode (name, season, year) " \
-          f"VALUES ('{episode_name}', '{episode_season}', '{episode_year}')"
+  query = f"SELECT DISTINCT (season) FROM isdb.episodes WHERE id_tv_show = '{id_tv_show}'"
+  cursor.execute(query)
+
+  data = cursor.fetchall()
+
+  seasons_list = [i for i, in data]
+
+  connection.close()
+
+  return seasons_list
+
+
+def register_episode(file, episode_name, episode_season, episode_original_air_date, episode_id_tv_show):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"INSERT INTO isdb.episodes (id_tv_show, name, season, original_air_date)" \
+          f"VALUES ({episode_id_tv_show}, '{episode_name}', '{episode_season}', '{episode_original_air_date}')"
 
   cursor.execute(query)
   connection.commit()

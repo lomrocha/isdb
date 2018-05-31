@@ -49,11 +49,13 @@ def get_directors(file, ids_director):
 def register_director(file, director_name, director_date_of_birth, director_place_of_birth):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"INSERT INTO isdb.director (name, date_of_birth, place_of_birth) " \
+  query = f"INSERT INTO isdb.director (name, date_of_birth, place_of_birth)" \
           f"VALUES ('{director_name}', '{director_date_of_birth}', '{director_place_of_birth}')"
 
   cursor.execute(query)
   connection.commit()
+
+  connection.close()
 
 
 def delete_director(file, id_director):
@@ -63,6 +65,8 @@ def delete_director(file, id_director):
 
   cursor.execute(query)
   connection.commit()
+
+  connection.close()
 
 
 def get_director_tv_shows_ids(file, id_director):

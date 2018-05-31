@@ -10,9 +10,10 @@ from dao \
 def register_episode():
   episode_name = request.args.get("episode_name")
   episode_season = request.args.get("episode_season")
-  episode_year = request.args.get("episode_year")
+  episode_original_air_date = request.args.get("episode_original_air_date")
+  episode_id_tv_show = request.args.get("episode_id_tv_show")
 
-  episode_dao.register_episode(app, episode_name, episode_season, episode_year)
+  episode_dao.register_episode(app, episode_name, episode_season, episode_original_air_date, episode_id_tv_show)
 
   return render_template("registered.html", type="episódio", name=episode_name)
 

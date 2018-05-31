@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,13 +11,15 @@
     <title>ISDB</title>
 
     <style>
-    .tab {
+    .tab
+    {
       overflow: hidden;
       border: 1px solid #ccc;
       background-color: #f1f1f1;
     }
 
-    .tab button {
+    .tab button
+    {
       background-color: inherit;
       float: left;
       border: none;
@@ -26,32 +29,33 @@
       transition: 0.3s;
     }
 
-    .tab button:hover {
+    .tab button:hover
+    {
       background-color: #ddd;
     }
 
-    .tab button.active {
+    .tab button.active
+    {
       background-color: #ccc;
     }
 
-    .tabcontent {
+    .tabcontent
+    {
       display: none;
       padding: 6px 12px;
       border: 1px solid #ccc;
       border-top: none;
     }
 
-    .tabcontent {
+    .tabcontent
+    {
       animation: fadeEffect 1000ms;
     }
 
-    @keyframes fadeEffect {
+    @keyframes fadeEffect
+    {
       from {opacity: 0;}
       to   {opacity: 1;}
-    }
-
-    .b button:hover {
-      background-color: #ddd;
     }
 
     #descriptionbox
@@ -62,6 +66,19 @@
        max-height: 120px;
        display: inline-block;
     }
+
+    .topnav
+    {
+        float: right;
+        margin-top: 2px;
+        margin-right: 16px;
+    }
+
+    select:hover
+    {
+        color: #444645;
+        background: #ddd;
+    }
     </style>
 </head>
 <body>
@@ -69,9 +86,21 @@
 <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a href="#home" class="w3-bar-item w3-button"><b>ISDB</b></a>
-        <div class="w3-right">
+        <div class="w3-left">
             <a href="#tv_shows" class="w3-bar-item w3-button">TV Shows</a>
             <a href="#cadastro" class="w3-bar-item w3-button">Cadastro</a>
+        </div>
+        <div class="topnav">
+            <form>
+                <input class="w3-bar-item w3-border" style="height: 35px" type="text" placeholder="Pesquisa..." name="search">
+                <select class="w3-bar-item w3-border" style="height: 35px" name="type">
+                    <option value="tv_show">TV Show</option>
+                    <option value="director">Diretor</option>
+                    <option value="cast">Elenco</option>
+                    <option value="episode">Episódio</option>
+                </select>
+                <button class="w3-bar-item" style="height: 35px" type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </div>
 </div>
@@ -87,11 +116,11 @@
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
+    <form action="cast_member_data">
+        <input type="text" name="id_cast">
+        <input type="submit" value="VAI">
+    </form>
 
-    <!-- Search Section -->
-    <div>
-        <form action
-    </div>
     <!-- TV Shows Section -->
     <div class="w3-container w3-padding-32" id="tv_shows">
         <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">TV Shows</h3>
@@ -136,7 +165,7 @@
                 <input class="w3-input w3-section w3-border" placeholder="Poster" type="text" name="tv_show_poster">
                 <input class="w3-input w3-section w3-border" placeholder="Description" type="text" name="tv_show_description">
                 <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i>CADASTRAR</i>
+                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
                 </button>
             </form>
         </div>
@@ -147,7 +176,7 @@
                 <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="date" name="director_date_of_birth">
                 <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="director_place_of_birth">
                 <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i>CADASTRAR</i>
+                    <i class="fa fa-paper-plane" aria-hidden="true">  CADASTRAR</i>
                 </button>
             </form>
         </div>
@@ -158,7 +187,7 @@
                 <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="date" name="cast_member_date_of_birth">
                 <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="cast_member_place_of_birth">
                 <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i>CADASTRAR</i>
+                    CADASTRAR  <i class="fa fa-paper-plane" aria-hidden="true"></i>
                 </button>
             </form>
         </div>
@@ -167,7 +196,12 @@
             <form action="register_episode">
                 <input class="w3-input w3-border" type="text" placeholder="Nome" name="episode_name">
                 <input class="w3-input w3-section w3-border" placeholder="Temporada" type="text" name="episode_season">
-                <input class="w3-input w3-section w3-border" placeholder="Ano" type="text" name="episode_year">
+                <input class="w3-input w3-section w3-border" placeholder="Dia de Estreia" type="date" name="episode_original_air_date">
+                <select class="w3-input w3-section w3-border" name="episode_id_tv_show">
+                {% for tv_show in tv_shows %}
+                    <option value="{{ tv_show.id_tv_show }}">{{ tv_show.name }}</option>
+                {% endfor %}
+                </select>
                 <button class="w3-input w3-section w3-hover-black" type="submit">
                     <i>CADASTRAR</i>
                 </button>
@@ -178,16 +212,19 @@
 <script type="text/javascript">
     document.getElementById("defaultOpen").click();
 
-    function openTab(event, tabName) {
+    function openTab(event, tabName)
+    {
         let i, tabcontent, tablinks;
 
         tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; ++i) {
+        for (let i = 0; i < tabcontent.length; ++i)
+        {
             tabcontent[i].style.display = "none";
         }
 
         tablinks = document.getElementsByClassName("tablinks");
-        for (let i = 0; i < tablinks.length; ++i) {
+        for (let i = 0; i < tablinks.length; ++i)
+        {
             tablinks[i].className = tablinks[i].className.replace("active", "");
         }
 
