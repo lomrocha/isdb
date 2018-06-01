@@ -19,4 +19,3 @@ def register_tv_show_cast_episode():
                                                          id_cast_member)
 
   return render_template("registered.html", type="elenco", name=cast_member_name)
-

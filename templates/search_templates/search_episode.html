@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "search_templates//search.html" %}
+{% block content %}
+{% for episode in data %}
+<p>
+    <b>Name:</b> {{ episode.name }} -
+    <b>Season:</b> {{ episode.season }} -
+    <b>Data de estreia:</b> {{ episode.year }}
+</p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

@@ -88,6 +88,31 @@ def get_tv_shows_by_genre(file, tv_show_genre):
   return tv_shows
 
 
+def get_tv_shows_by_search(file, search):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"SELECT id_tv_show, name, genre, poster, description FROM isdb.tvshows " \
+          f"WHERE name LIKE '%{search}%' " \
+          f"OR genre LIKE '%{search}%' " \
+          f"OR poster LIKE '%{search}%' " \
+          f"OR description LIKE '%{search}%'"
+  cursor.execute(query)
+
+  data = cursor.fetchall()
+
+  tv_shows = []
+  for tv_show in data:
+    _tv_show = tv_show_model.TvShow(tv_show[0],
+                                    tv_show[1],
+                                    tv_show[2],
+                                    tv_show[3],
+                                    tv_show[4])
+
+    tv_shows.append(_tv_show)
+
+  return tv_shows
+
+
 def get_tv_show_directors_ids(file, id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 
@@ -104,7 +129,7 @@ def get_tv_show_directors_ids(file, id_tv_show):
 def get_tv_show_cast_members_ids(file, id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT id_cast FROM isdb.cast_tvshows WHERE id_tv_show = '{id_tv_show}'"
+  query = f"SELECT DISTINCT (id_cast) FROM isdb.cast_tvshows WHERE id_tv_show = '{id_tv_show}'"
   cursor.execute(query)
 
   tv_show_data = cursor.fetchall()

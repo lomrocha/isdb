@@ -53,3 +53,12 @@ def tv_show_data_detail():
                          directors=directors,
                          cast_members=cast_members,
                          episodes=episodes)
+
+
+@app.route("/search_tv_show")
+def search_tv_show():
+  search = request.args.get("search")
+
+  data = tv_show_dao.get_tv_shows_by_search(app, search)
+
+  return render_template("search_templates/search_tv_show.html", data=data)

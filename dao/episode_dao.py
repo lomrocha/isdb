@@ -64,6 +64,29 @@ def get_seasons(file, id_tv_show):
   return seasons_list
 
 
+def get_episodes_by_search(file, search):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"SELECT id_episode, id_tv_show, name, season, original_air_date FROM isdb.episodes " \
+          f"WHERE name LIKE '%{search}%' " \
+          f"OR season LIKE '%{search}%'"
+  cursor.execute(query)
+
+  data = cursor.fetchall()
+
+  episodes = []
+  for episode in data:
+    _episode = episode_model.Episode(episode[0],
+                                     episode[1],
+                                     episode[2],
+                                     episode[3],
+                                     episode[4])
+
+    episodes.append(_episode)
+
+  return episodes
+
+
 def register_episode(file, episode_name, episode_season, episode_original_air_date, episode_id_tv_show):
   connection, cursor = connection_dao.get_connection(file)
 

@@ -25,3 +25,12 @@ def delete_episode():
   episode_dao.delete_episode(app, id_episode)
 
   return render_template("deleted.html", type="episódio")
+
+
+@app.route("/search_episode")
+def search_episode():
+  search = request.args.get("search")
+
+  data = episode_dao.get_episodes_by_search(app, search)
+
+  return render_template("search_templates/search_episode.html", data=data)

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "search_templates//search.html" %}
+{% block content %}
+{% for director in data %}
+<p>
+    <b>Name:</b> {{ director.name }} -
+    <b>Date of Birth:</b> {{ director.date_of_birth }} -
+    <b>Place of Birth:</b> {{ director.place_of_birth }}
+</p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

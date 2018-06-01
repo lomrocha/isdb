@@ -7,7 +7,7 @@ from model \
 def get_director(file, id_director):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"SELECT name, date_of_birth, place_of_birth FROM isdb.director WHERE id_director = '{id_director}'"
+  query = f"SELECT name, date_of_birth, place_of_birth, picture FROM isdb.director WHERE id_director = '{id_director}'"
   cursor.execute(query)
 
   data = cursor.fetchone()
@@ -15,7 +15,8 @@ def get_director(file, id_director):
   _director = director_model.Director(id_director,
                                       data[0],
                                       data[1],
-                                      data[2])
+                                      data[2],
+                                      data[3])
 
   connection.close()
 
@@ -29,7 +30,7 @@ def get_directors(file, ids_director):
 
   directors = []
   for id_d in id_list:
-    query = f"SELECT name, date_of_birth, place_of_birth FROM isdb.director WHERE id_director = '{id_d}'"
+    query = f"SELECT name, date_of_birth, place_of_birth, picture FROM isdb.director WHERE id_director = '{id_d}'"
     cursor.execute(query)
 
     data = cursor.fetchone()
@@ -37,7 +38,8 @@ def get_directors(file, ids_director):
     _director = director_model.Director(id_d,
                                         data[0],
                                         data[1],
-                                        data[2])
+                                        data[2],
+                                        data[3])
 
     directors.append(_director)
 
@@ -46,11 +48,11 @@ def get_directors(file, ids_director):
   return directors
 
 
-def register_director(file, director_name, director_date_of_birth, director_place_of_birth):
+def register_director(file, director_name, director_date_of_birth, director_place_of_birth, director_picture):
   connection, cursor = connection_dao.get_connection(file)
 
-  query = f"INSERT INTO isdb.director (name, date_of_birth, place_of_birth)" \
-          f"VALUES ('{director_name}', '{director_date_of_birth}', '{director_place_of_birth}')"
+  query = f"INSERT INTO isdb.director (name, date_of_birth, place_of_birth, picture)" \
+          f"VALUES ('{director_name}', '{director_date_of_birth}', '{director_place_of_birth}', '{director_picture}')"
 
   cursor.execute(query)
   connection.commit()
@@ -67,6 +69,29 @@ def delete_director(file, id_director):
   connection.commit()
 
   connection.close()
+
+
+def get_directors_by_search(file, search):
+  connection, cursor = connection_dao.get_connection(file)
+
+  query = f"SELECT id_director, name, date_of_birth, place_of_birth, picture FROM isdb.director " \
+          f"WHERE name LIKE '%{search}%' " \
+          f"OR place_of_birth LIKE '%{search}%'"
+  cursor.execute(query)
+
+  data = cursor.fetchall()
+
+  directors = []
+  for director in data:
+    _director = director_model.Director(director[0],
+                                        director[1],
+                                        director[2],
+                                        director[3],
+                                        director[4])
+
+    directors.append(_director)
+
+  return directors
 
 
 def get_director_tv_shows_ids(file, id_director):

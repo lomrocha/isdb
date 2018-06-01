@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6a3bee5-2320-40c7-823e-7f5914911cb1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/search_templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search_templates/search_cast.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search_templates/search_director.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search_templates/search_episode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/search_templates/search_tv_show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/tv_show_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/isdb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/isdb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/cast_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/cast_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/director_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/director_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/episode_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/episode_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/static/chosen-sprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/chosen-sprite.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/static/chosen.jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/chosen.jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/static/chosen.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/chosen.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/templates/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/cast_member_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cast_member_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/deleted.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deleted.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/registered.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registered.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/templates/tv_show_data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/tv_show_cast_episode_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/tv_show_cast_episode_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/control/tv_show_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/tv_show_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/cast_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/cast_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/director_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/director_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/episode_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/episode_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/tv_show_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dao/tv_show_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cast_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cast_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/director_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/director_model.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>c.</find>
+      <find>project</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dao/connection_dao.py" />
+        <option value="$PROJECT_DIR$/control/templates/register_tv_show_data.html" />
+        <option value="$PROJECT_DIR$/control/templates/form_register_tv_show_data.html" />
+        <option value="$PROJECT_DIR$/control/templates/tv_show_registered.html" />
+        <option value="$PROJECT_DIR$/templates/__init__.py" />
+        <option value="$PROJECT_DIR$/control/templates/deleted.html" />
+        <option value="$PROJECT_DIR$/model/tv_show_model.py" />
+        <option value="$PROJECT_DIR$/model/episode_model.py" />
+        <option value="$PROJECT_DIR$/control/templates/registered.html" />
+        <option value="$PROJECT_DIR$/dao/tv_show_cast_episode_dao.py" />
+        <option value="$PROJECT_DIR$/model/director_model.py" />
+        <option value="$PROJECT_DIR$/model/cast_model.py" />
+        <option value="$PROJECT_DIR$/control/templates/cast_member_data.html" />
+        <option value="$PROJECT_DIR$/control/static/main.js" />
+        <option value="$PROJECT_DIR$/control/tv_show_cast_episode_control.py" />
+        <option value="$PROJECT_DIR$/control/static/main.css" />
+        <option value="$PROJECT_DIR$/dao/director_dao.py" />
+        <option value="$PROJECT_DIR$/dao/cast_dao.py" />
+        <option value="$PROJECT_DIR$/dao/episode_dao.py" />
+        <option value="$PROJECT_DIR$/control/templates/base.html" />
+        <option value="$PROJECT_DIR$/control/templates/index.html" />
+        <option value="$PROJECT_DIR$/dao/tv_show_dao.py" />
+        <option value="$PROJECT_DIR$/control/templates/tv_show_data.html" />
+        <option value="$PROJECT_DIR$/control/templates/search_tv_show.html" />
+        <option value="$PROJECT_DIR$/control/templates/search_director.html" />
+        <option value="$PROJECT_DIR$/control/templates/search.html" />
+        <option value="$PROJECT_DIR$/control/templates/search_cast.html" />
+        <option value="$PROJECT_DIR$/control/templates/search_episode.html" />
+        <option value="$PROJECT_DIR$/templates/search_files/search_cast.html" />
+        <option value="$PROJECT_DIR$/templates/search_files/search_director.html" />
+        <option value="$PROJECT_DIR$/templates/search_files/search_episode.html" />
+        <option value="$PROJECT_DIR$/templates/search_files/search_tv_show.html" />
+        <option value="$PROJECT_DIR$/control/director_control.py" />
+        <option value="$PROJECT_DIR$/control/episode_control.py" />
+        <option value="$PROJECT_DIR$/control/tv_show_control.py" />
+        <option value="$PROJECT_DIR$/templates/search_templates/search_director.html" />
+        <option value="$PROJECT_DIR$/templates/search_templates/search_episode.html" />
+        <option value="$PROJECT_DIR$/templates/search_templates/search_tv_show.html" />
+        <option value="$PROJECT_DIR$/control/__init__.py" />
+        <option value="$PROJECT_DIR$/templates/cast_member_data.html" />
+        <option value="$PROJECT_DIR$/templates/search_templates/search.html" />
+        <option value="$PROJECT_DIR$/templates/search_templates/search_cast.html" />
+        <option value="$PROJECT_DIR$/control/cast_control.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1284" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="isdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isdb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="isdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isdb" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="isdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isdb" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="isdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="isdb" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Desktop\Projetos\PyCharm\isdb\templates\search_files" />
+      <recent name="C:\Users\Dell\Desktop\Projetos\PyCharm\isdb\templates" />
+      <recent name="C:\Users\Dell\Desktop\Projetos\PyCharm\isdb\templates\search" />
+      <recent name="C:\Users\Dell\Desktop\Projetos\PyCharm\isdb\static" />
+      <recent name="C:\Users\Dell\Desktop\Projetos\PyCharm\isdb" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="isdb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/control" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/control/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.__init__" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6a3bee5-2320-40c7-823e-7f5914911cb1" name="Default" comment="" />
+      <created>1527612893143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527612893143</updated>
+    </task>
+    <task id="LOCAL-00001" summary="primeiro commit">
+      <created>1527618640253</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527618640254</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1527626777423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527626777423</updated>
+    </task>
+    <task id="LOCAL-00003" summary=".">
+      <created>1527715829589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527715829589</updated>
+    </task>
+    <task id="LOCAL-00004" summary=".">
+      <created>1527747120349</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527747120349</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20245399" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50153375" side_tool="true" weight="0.25112107" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49846625" visible="true" weight="0.24215247" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32884902" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18328221" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49846625" visible="true" weight="0.25112107" />
+      <window_info anchor="bottom" id="Inspection Results" order="7" weight="0.32884902" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50153375" side_tool="true" weight="0.25112107" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="primeiro commit" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/cast_member_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="40" column="94" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/tv_show_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tv_show_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/cast_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/cast_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cast_member_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/tv_show_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tv_show_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/cast_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/cast_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cast_member_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/templates/register_tv_show_data.html" />
+    <entry file="file://$PROJECT_DIR$/dao/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/templates/form_register_tv_show_data.html" />
+    <entry file="file://$PROJECT_DIR$/control/tab.css" />
+    <entry file="file://$PROJECT_DIR$/templates/deleted.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/tv_show_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/script.js" />
+    <entry file="file://$PROJECT_DIR$/dao/connection_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/director_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/cast_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/main.js" />
+    <entry file="file://$PROJECT_DIR$/static/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/episode_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/director_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/cast_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/episode_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1580">
+          <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tv_show_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/templates/base.html" />
+    <entry file="file://$PROJECT_DIR$/control/tv_show_cast_episode_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registered.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/director_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/episode_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/tv_show_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search_templates/search_episode.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search_templates/search_tv_show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search_templates/search_director.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search_templates/search_cast.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/cast_control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="52" lean-forward="true" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search_templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/tv_show_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="138" column="21" lean-forward="true" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/tv_show_cast_episode_dao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="84" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cast_member_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
