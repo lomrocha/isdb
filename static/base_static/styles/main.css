@@ -1,0 +1,18 @@
+    ul
+    {
+      border-left: 5px solid grey;
+      list-style-type: none;
+      padding: 5px 20px;
+      background-color: #f1f1f1;
+      margin-left: 2.5px;
+    }
+
+    li
+    {
+      margin: 10px 0;
+    }
+
+    ::-webkit-scrollbar
+    {
+        display: none;
+    }

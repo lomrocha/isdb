@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='base_static/styles/w3.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='base_static/styles/font-awesome.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='base_static/styles/main.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='base_static/styles/bootstrap.min.css')}}">
+        <script rel="script" type="text/javascript" src="{{url_for('static', filename='base_static/scripts/bootstrap.min.js')}}"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Sunflower:300');
+        </style>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='base_static/styles/font.css')}}">
+    {% endblock head %}
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="#home" class="w3-bar-item w3-button">
+            <b>ISDB</b>
+        </a>
+        <div class="w3-right">
+            {% block first_index %} {% endblock %}
+            {% block second_index %} {% endblock %}
+            <a href="#footer" class="w3-bar-item w3-button">Explore</a>
+        </div>
+        <div class="topnav">
+            <form action="/search_tv_show" id="search_form" autocomplete="off">
+                <input class="w3-bar-item w3-border" style="height: 35px;" type="text" placeholder="Pesquisa..." name="search">
+                <select class="w3-bar-item w3-border w3-opacity" style="height: 35px; font-size: 12px; font-family: 'Verdana', Sans-Serif;" name="type" onchange="change_action(this.value)">
+                    <option value="tv_show">TV Show</option>
+                    <option value="director">Diretor</option>
+                    <option value="cast">Elenco</option>
+                    <option value="episode">Episódio</option>
+                </select>
+                <button class="w3-bar-item" style="height: 35px" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<span style="padding-top: 5px; opacity: 0"  id="home">a</span>
+
+<!-- Page content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px; margin-top:100px;">
+{% block content %}
+
+{% endblock content %}
+</div>
+
+<!-- Footer content -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px; margin-top:100px;">
+    <div class="w3-container">
+        <h6 class="w3-border-bottom"></h6>
+    </div>
+
+    <footer class="w3-row-padding w3-padding-16" id="footer">
+        <div class="w3-quarter">
+            <h3 style="font-family: 'Sunflower', sans-serif;">FOOTER</h3>
+            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            <p>Powered by <a href="/">isdb</a></p>
+        </div>
+
+
+        <div class="w3-quarter">
+            <h3 style="opacity: 0">a</h3>
+        </div>
+
+        <div class="w3-quarter">
+            <h3 style="opacity: 0">a</h3>
+        </div>
+
+        <div class="w3-quarter w3-container">
+            <h3 style="font-family: 'Sunflower', sans-serif;">EXPLORE:</h3>
+            <div>
+                <ul>
+                    <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/directors_data">Diretores</a></li>
+                    <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/cast_members_data">Elenco</a></li>
+                    <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/episodes_data">Episódios</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

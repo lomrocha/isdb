@@ -94,7 +94,6 @@ def get_tv_shows_by_search(file, search):
   query = f"SELECT id_tv_show, name, genre, poster, description FROM isdb.tvshows " \
           f"WHERE name LIKE '%{search}%' " \
           f"OR genre LIKE '%{search}%' " \
-          f"OR poster LIKE '%{search}%' " \
           f"OR description LIKE '%{search}%'"
   cursor.execute(query)
 

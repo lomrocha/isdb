@@ -18,6 +18,8 @@
     </style>
 </head>
 <body>
+{% extends base.html %}
+{% block content %}
 <h3>{{cast_member.name}} - Episodes:</h3>
 {% for episode in episodes %}
 <p>{{episode.name}}</p>
@@ -59,5 +61,7 @@
       include_group_label_in_selected: true
     });
 </script>
+
+{% endblock %}
 </body>
 </html>

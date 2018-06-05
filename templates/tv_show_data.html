@@ -2,111 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <title>TV Show</title>
-    <style>
-        h3 {text-align: center; width: 25%}
-
-        .container_header
-        {
-            padding: 65px 15px 15px 15px
-        }
-
-
-
-    </style>
+    <title>{{tv_show.name}}</title>
 </head>
 <body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-        <a href="#home" class="w3-bar-item w3-button">
-            <b>{{tv_show.name}}</b>
-        </a>
-        <div class="w3-right">
-            <a href="#cast" class="w3-bar-item w3-button">Elenco</a>
-            <a href="#episodes" class="w3-bar-item w3-button">Episódios</a>
-        </div>
-        <div class="topnav">
-            <form action="/search_tv_show" id="search_form" autocomplete="off">
-                <input class="w3-bar-item w3-border" style="height: 36px;" type="text" placeholder="Pesquisa..."
-                       name="search">
-                <select class="w3-bar-item w3-border w3-opacity"
-                        style="height: 36px; font-size: 12px; font-family: 'Verdana', Sans-Serif;" name="type"
-                        onchange="change_action(this.value)">
-                    <option value="tv_show">TV Show</option>
-                    <option value="director">Diretor</option>
-                    <option value="cast">Elenco</option>
-                    <option value="episode">Episódio</option>
-                </select>
-                <button class="w3-bar-item" style="height: 36px" type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+{% extends "base.html" %}
 
-<header id="home">
-    <div class="container_header">
-        <img src="{{tv_show.poster}}" width="180" height="280">
+{% block first_index %} <a href="#cast" class="w3-bar-item w3-button">Elenco</a> {% endblock first_index %}
+{% block second_index %} <a href="#episodes" class="w3-bar-item w3-button">Episódios</a> {% endblock second_index %}
+
+{% block content %}
+<header class="w3-display-container w3-wide" style="max-width:1200px;">
+    <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white">
+            <span class="w3-hide-small w3-text-grey" style="font-family: 'Sunflower', sans-serif;">{{tv_show.name}}</span>
+        </h1>
     </div>
 </header>
 
-<div class="w3-content w3-padding" style="max-width:1564px">
-
-
-    <div class="w3-container w3-padding-32" id="cast">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Elenco</h3>
-    </div>
-
-    {% if directors != [] %}
-    <p>
-    <h3>DIRETORES:</h3>
-    {% for director in directors %}
-    <p>
-        {{ director.id_director }} -
-        {{ director.name }} -
-        {{ director.date_of_birth }} -
-        {{ director.place_of_birth }}
-    </p>
-    {% endfor %}
-    </p>
-    {% endif %}
-    {% if cast_members != [] %}
-    <p>
-    <h3>ELENCO:</h3>
-    <a href="cast_member_data?id_cast={{ cast_members[0].id_cast }} ">
-        {% for cast_member in cast_members %}
-        <p>
-            {{ cast_member.id_cast }} -
-            {{ cast_member.name }} -
-            {{ cast_member.date_of_birth }} -
-            {{ cast_member.place_of_birth }}
-        </p>
-        {% endfor %}
-    </a>
-    </p>
-    {% endif %}
-
-    <div class="w3-container w3-padding-32" id="episode">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Episódios</h3>
-    </div>
-
-    <p>
-        {% if episodes != [] %}
-        {% for episode in episodes %}
-    <p>
-        {{ episode.id_episode }} -
-        {{ episode.name }} -
-        {{ episode.season }} -
-        {{ episode.year }}
-    </p>
-    {% endfor %}
-    </p>
-    {% endif %}
+<!-- TV Show section -->
+<div class="w3-container w3-padding-16">
+    <h2 class="w3-border-bottom w3-padding-16"></h2>
 </div>
+
+<div class="w3-row-padding w3-padding-8">
+    <div class="w3-quarter w3-container">
+        <img src="{{tv_show.poster}}" width="250" height="389">
+    </div>
+
+
+    <div class="w3-quarter w3-container">
+        <h4 style="font-family: 'Sunflower', sans-serif;">DESCRIÇÃO:</h4>
+        <p>{{tv_show.description}}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 style="font-family: 'Sunflower', sans-serif;">EXPLORE:</h4>
+        <div>
+            <ul>
+                <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/directors_data">Diretores</a></li>
+                <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/cast_members_data">Elenco</a></li>
+                <li><i class="fa fa-link" aria-hidden="true"></i> <a href="/episodes_data">Episódios</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w3-quarter w3-container">
+                <h4 style="font-family: 'Sunflower', sans-serif;">GÊNERO:</h4>
+        <p>{{tv_show.genre}}</p>
+
+    </div>
+</div>
+
+<div class="w3-container w3-padding-32" id="cast">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Elenco</h3>
+</div>
+
+{% if directors != [] %}
+<h3>DIRETORES:</h3>
+{% for director in directors %}
+<p>
+    {{ director.id_director }} -
+    {{ director.name }} -
+    {{ director.date_of_birth }} -
+    {{ director.place_of_birth }}
+</p>
+{% endfor %}
+{% endif %}
+{% if cast_members != [] %}
+<p>
+<h3>ELENCO:</h3>
+<a href="cast_member_data?id_cast={{ cast_members[0].id_cast }} ">
+    {% for cast_member in cast_members %}
+    <p>
+        {{ cast_member.id_cast }} -
+        {{ cast_member.name }} -
+        {{ cast_member.date_of_birth }} -
+        {{ cast_member.place_of_birth }}
+    </p>
+    {% endfor %}
+</a>
+{% endif %}
+
+<div class="w3-container w3-padding-32" id="episode">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Episódios</h3>
+</div>
+
+{% if episodes != [] %}
+{% for episode in episodes %}
+<p>
+    {{ episode.id_episode }} -
+    {{ episode.name }} -
+    {{ episode.season }} -
+    {{ episode.year }}
+</p>
+{% endfor %}
+{% endif %}
+
+{% endblock content %}
 </body>
 </html>

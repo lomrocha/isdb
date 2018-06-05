@@ -4,188 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='index_static/styles/main.css')}}">
+    <script rel="script" type="text/javascript" src="{{url_for('static', filename='index_static/scripts/main.js')}}"></script>
+    <script rel="script" type="text/javascript" src="{{url_for('static', filename='jquery-3.3.1.js')}}"></script>
     <title>ISDB</title>
 </head>
-
 <body>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-        <a href="#home" class="w3-bar-item w3-button">
-            <b>ISDB</b>
-        </a>
-        <div class="w3-right">
-            <a href="#tv_shows" class="w3-bar-item w3-button">TV Shows</a>
-            <a href="#cadastro" class="w3-bar-item w3-button">Cadastro</a>
-        </div>
-        <div class="topnav">
-            <form action="/search_tv_show" id="search_form" autocomplete="off">
-                <input class="w3-bar-item w3-border" style="height: 36px;" type="text" placeholder="Pesquisa..." name="search">
-                <select class="w3-bar-item w3-border w3-opacity" style="height: 36px; font-size: 12px; font-family: 'Verdana', Sans-Serif;" name="type" onchange="change_action(this.value)">
-                    <option value="tv_show">TV Show</option>
-                    <option value="director">Diretor</option>
-                    <option value="cast">Elenco</option>
-                    <option value="episode">Episódio</option>
-                </select>
-                <button class="w3-bar-item" style="height: 36px" type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+{% extends "base.html" %}
 
+{% block first_index %} <a href="#tv_shows" class="w3-bar-item w3-button">TV Shows</a> {% endblock %}
+{% block second_index %} <a href="#cadastro" class="w3-bar-item w3-button">Cadastro</a> {% endblock %}
+
+{% block content %}
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1000px;" id="home">
-    <img class="w3-image" src="https://i.imgur.com/rjwjpVR.jpg" alt="Architecture" width="1000" height="533">
+<header class="w3-display-container w3-wide" style="max-width:1200px;">
     <div class="w3-display-middle w3-margin-top w3-center">
         <h1 class="w3-xxlarge w3-text-white">
-            <span class="w3-padding w3-black w3-opacity-min"></span>
-            <span class="w3-hide-small w3-text-light-grey">ISDB</span>
+            <span class="w3-hide-small w3-text-grey" style="font-family: 'Sunflower', sans-serif;">ISDB</span>
         </h1>
     </div>
 </header>
 
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-    <form action="cast_member_data">
-        <input type="text" name="id_cast">
-        <input type="submit" value="VAI">
-    </form>
+<!-- TV Shows Section -->
+<span style="padding-top: 5px; opacity: 0" id="tv_shows">a</span>
 
-    <!-- TV Shows Section -->
-    <div class="w3-container w3-padding-32" id="tv_shows">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">TV Shows</h3>
+<div class="w3-container w3-padding-16">
+    <h3 class="w3-border-bottom w3-padding-16" style="font-family: 'Sunflower', sans-serif;">TV SHOWS</h3>
+</div>
+
+<div class="tabdiv">
+    <div class="top-float">
+    {% for tv_show in tv_shows %}
+    <div class="tv-shows-content">
+        <a href="tv_show_data?id_tv_show={{tv_show.id_tv_show}}"><img src="{{tv_show.poster}}" width="250" height="389"></a>
+        <table>
+            <tr>
+                <td><h3 class="w3-greyscale-max" style="font-family: 'Sunflower', sans-serif;">{{tv_show.name}}</h3></td>
+                <td>&nbsp;</td>
+                <td><button id="delete_button" type="submit" onclick="$('#delete_popup_{{tv_show.id_tv_show}}').fadeIn(1000)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tr>
+        </table>
+        <p class="w3-opacity">{{tv_show.genre}}</p>
+        <p style="width: 250px; max-width: 250px; height: 120px; max-height: 120px;">{{tv_show.description}}</p>
     </div>
 
-    <div class="w3-row-padding">
-        {% for tv_show in tv_shows %}
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-                <a href="tv_show_data?id_tv_show={{ tv_show.id_tv_show }}"><img src="{{tv_show.poster}}" width="250" height="389"></a>
-                <h3 class="w3-grayscale">{{ tv_show.name }}</h3>
-                <p class="w3-opacity">{{ tv_show.genre }}</p>
-                <div id="descriptionbox" class="w3-grayscale">
-                    <p style="width: 250px;"> {{ tv_show.description }}</p>
-                </div>
-                <p>
-                    <button class="w3-button w3-light-grey w3-block" style="width: 250px;">
-                        <a href="delete_tv_show?id_tv_show={{ tv_show.id_tv_show }}">Deletar</a>
-                    </button>
-                </p>
-            </div>
+    <!-- Delete pop-up -->
+    <div id="delete_popup_{{tv_show.id_tv_show}}" class="w3-modal">
+      <div class="w3-modal-content w3-animate-zoom" style="padding:8px">
+        <div class="w3-container w3-white w3-center">
+            <i onclick="$('#delete_popup_{{tv_show.id_tv_show}}').fadeOut(1000)" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+            <h2 style="margin-left: 60px">CONFIRMAÇÃO</h2>
+            <p>Tem certeza que quer deletar o seriado {{tv_show.name}}?</p>
+            <form action="/delete_tv_show">
+                <input type="hidden" name="id_tv_show" value="{{tv_show.id_tv_show}}">
+                <button type="submit" class="w3-button w3-padding-large w3-red w3-margin-bottom">Sim</button>
+            </form>
         </div>
-        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+        </div>
+</div>
+
+<!-- Cadastro Section -->
+<span style="padding-top: 5px; opacity: 0" id="cadastro">a</span>
+
+<div class="w3-container w3-padding-16">
+    <h3 class="w3-border-bottom w3-padding-16" style="font-family: 'Sunflower', sans-serif;">CADASTRO</h3>
+</div>
+
+<div class="tabdiv">
+    <!-- Tabs -->
+    <div class="tab">
+        <button class="tablinks " onclick="open_tab(event, 'tv_show')" id="default_open">TV Show</button>
+        <button class="tablinks " onclick="open_tab(event, 'director')">Diretor</button>
+        <button class="tablinks " onclick="open_tab(event, 'cast')">Elenco</button>
+        <button class="tablinks " onclick="open_tab(event, 'episode')">Episódio</button>
     </div>
 
-    <!-- Cadastro Section -->
-    <div class="w3-container w3-padding-32" id="cadastro">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Cadastro</h3>
+    <!-- Tv_show tab -->
+    <div class="tabcontent" id="tv_show">
+        <form action="register_tv_show">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" name="tv_show_name">
+            <input class="w3-input w3-section w3-border" placeholder="Gênero" type="text" name="tv_show_genre">
+            <input class="w3-input w3-section w3-border" placeholder="Poster" type="text" name="tv_show_poster">
+            <input class="w3-input w3-section w3-border" placeholder="Description" type="text" name="tv_show_description">
+            <button class="w3-input w3-section w3-hover-black w3-dark-grey" type="submit">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
     </div>
-
-    <div class="w3-row-padding">
-        <!-- tabs -->
-        <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'tv_show')" id="defaultOpen">TV Show</button>
-            <button class="tablinks" onclick="openTab(event, 'director')">Diretor</button>
-            <button class="tablinks" onclick="openTab(event, 'cast')">Elenco</button>
-            <button class="tablinks" onclick="openTab(event, 'episode')">Episódio</button>
-        </div>
-
-        <!-- tv_show tab -->
-        <div class="tabcontent" id="tv_show">
-            <form action="register_tv_show">
-                <input class="w3-input w3-border" type="text" placeholder="Nome" name="tv_show_name">
-                <input class="w3-input w3-section w3-border" placeholder="Gênero" type="text" name="tv_show_genre">
-                <input class="w3-input w3-section w3-border" placeholder="Poster" type="text" name="tv_show_poster">
-                <input class="w3-input w3-section w3-border" placeholder="Description" type="text" name="tv_show_description">
-                <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-        <!-- director tab -->
-        <div class="tabcontent" id="director">
-            <form action="register_director">
-                <input class="w3-input w3-border" type="text" placeholder="Nome" name="director_name">
-                <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="director_date_of_birth">
-                <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="director_place_of_birth">
-                <input class="w3-input w3-section w3-border" placeholder="Foto" type="text" name="director_picture">
-                <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i class="fa fa-paper-plane" aria-hidden="true"> CADASTRAR</i>
-                </button>
-            </form>
-        </div>
-        <!-- cast tab -->
-        <div class="tabcontent" id="cast">
-            <form action="register_cast_member">
-                <input class="w3-input w3-border" type="text" placeholder="Nome" name="cast_member_name">
-                <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="cast_member_date_of_birth">
-                <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="cast_member_place_of_birth">
-                <input class="w3-input w3-section w3-border" placeholder="Foto" type="text" name="cast_member_picture">
-                <button class="w3-input w3-section w3-hover-black" type="submit">
-                    CADASTRAR
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-        <!-- aba episode -->
-        <div class="tabcontent" id="episode">
-            <form action="register_episode">
-                <input class="w3-input w3-border" type="text" placeholder="Nome" name="episode_name">
-                <input class="w3-input w3-section w3-border" placeholder="Temporada" type="text" name="episode_season">
-                <input class="w3-input w3-section w3-border" placeholder="Dia de Estreia" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="episode_original_air_date">
-                <select class="w3-input w3-section w3-border" name="episode_id_tv_show">
-                    {% for tv_show in tv_shows %}
-                    <option value="{{ tv_show.id_tv_show }}">{{ tv_show.name }}</option>
-                    {% endfor %}
-                </select>
-                <button class="w3-input w3-section w3-hover-black" type="submit">
-                    <i>CADASTRAR</i>
-                </button>
-            </form>
-        </div>
+    <!-- Director tab -->
+    <div class="tabcontent" id="director">
+        <form action="register_director">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" name="director_name">
+            <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="director_date_of_birth">
+            <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="director_place_of_birth">
+            <input class="w3-input w3-section w3-border" placeholder="Foto" type="text" name="director_picture">
+            <button class="w3-input w3-section w3-hover-black w3-dark-grey" type="submit">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+    <!-- Cast tab -->
+    <div class="tabcontent" id="cast">
+        <form action="register_cast_member">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" name="cast_member_name">
+            <input class="w3-input w3-section w3-border" placeholder="Data de Nascimento" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="cast_member_date_of_birth">
+            <input class="w3-input w3-section w3-border" placeholder="Cidade de Nascimento" type="text" name="cast_member_place_of_birth">
+            <input class="w3-input w3-section w3-border" placeholder="Foto" type="text" name="cast_member_picture">
+            <button class="w3-input w3-section w3-hover-black w3-dark-grey" type="submit">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+    <!-- Episode tab -->
+    <div class="tabcontent" id="episode">
+        <form action="register_episode">
+            <input class="w3-input w3-border" type="text" placeholder="Nome" name="episode_name">
+            <input class="w3-input w3-section w3-border" placeholder="Temporada" type="text" name="episode_season">
+            <input class="w3-input w3-section w3-border" placeholder="Dia de Estreia" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="episode_original_air_date">
+            <select class="w3-input w3-section w3-border" name="episode_id_tv_show">
+                {% for tv_show in tv_shows %}
+                <option value="{{ tv_show.id_tv_show }}">{{ tv_show.name }}</option>
+                {% endfor %}
+            </select>
+            <button class="w3-input w3-section w3-hover-black w3-dark-grey" type="submit">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
     </div>
 </div>
 
-<script type="text/javascript">
-    document.getElementById("defaultOpen").click();
-
-    function openTab(event, tabName)
-    {
-        let i, tabcontent, tablinks;
-
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (let i = 0; i < tabcontent.length; ++i)
-        {
-            tabcontent[i].style.display = "none";
-        }
-
-        tablinks = document.getElementsByClassName("tablinks");
-        for (let i = 0; i < tablinks.length; ++i)
-        {
-            tablinks[i].className = tablinks[i].className.replace("active", "");
-        }
-
-        document.getElementById(tabName).style.display = "block"
-        event.currentTarget.className += " active";
-    }
-
-    let search_form = document.getElementById('search_form') || null;
-    function change_action(value)
-    {
-        if (search_form)
-        {
-            search_form.action = '/search_' + value
-        }
-    }
+<script>
+    $(document).ready(() => $("#default_open").click().addClass("active"));
 </script>
+{% endblock content %}
 </body>
-
 </html>
